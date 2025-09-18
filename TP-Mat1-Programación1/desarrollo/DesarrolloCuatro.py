@@ -20,3 +20,12 @@ for op in operaciones:
 #el .strip() elimina los espacios y otros caracteres como salto de linea en la respuesta
 #el .upper() toma cualquier minuscula y lo convierte en mayuscula
 opcion = input("Elige una operación lógica: ").strip().upper()
+
+#Esto valida operación, si la opcion no esta en las operaciones imprira un mensaje
+#sino, imprimira la primera fila de la tabla
+if opcion not in operaciones:
+    print("Operación no válida.")
+else:
+    print(f"\nTabla de verdad para: {opcion}")
+    print("A\tB\tResultado")
+    print("-" * 24)
