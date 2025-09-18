@@ -11,3 +11,12 @@ operaciones = {
     "NOT A": lambda a, b: not a,
     "NOT B": lambda a, b: not b
 }
+# Mostrar opciones
+print("Operaciones disponibles:")
+for op in operaciones:
+    print(f"- {op}")
+
+#Solicitar operación al usuario
+#el .strip() elimina los espacios y otros caracteres como salto de linea en la respuesta
+#el .upper() toma cualquier minuscula y lo convierte en mayuscula
+opcion = input("Elige una operación lógica: ").strip().upper()
