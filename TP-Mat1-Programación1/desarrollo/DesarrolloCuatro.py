@@ -2,7 +2,7 @@
 from colorama import Fore, Style, init
 from tabulate import tabulate
 
-# Inicializar colorama
+# Inicializar coloramaa
 init(autoreset=True)
 # Lista de operaciones disponibles
 operaciones = {
