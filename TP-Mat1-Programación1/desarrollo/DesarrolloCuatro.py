@@ -16,9 +16,9 @@ operaciones = {
     "NOT B": lambda a, b: not b
 }#Cada valor es una función lambda que recibe A y B y devuelve el resultado lógico.
 # Mostrar opciones
-print("Operaciones disponibles:")
+print(Fore.CYAN + "Operaciones disponibles:")
 for op in operaciones:
-    print(f"- {op}")
+    print(Fore.YELLOW + f"- {op}")
 
 #Solicitar operación al usuario
 #el .strip() elimina los espacios y otros caracteres como salto de linea en la respuesta
