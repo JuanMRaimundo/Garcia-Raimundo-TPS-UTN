@@ -1,5 +1,9 @@
 # Programa: Tabla de verdad interactiva
+from colorama import Fore, Style, init
+from tabulate import tabulate
 
+# Inicializar colorama
+init(autoreset=True)
 # Lista de operaciones disponibles
 operaciones = {
     "AND": lambda a, b: a and b,
