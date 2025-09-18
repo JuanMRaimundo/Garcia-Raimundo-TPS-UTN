@@ -1,3 +1,4 @@
+#Programa:Cuenta del 0 al 15 en diferentes sistemas numericos
 import time  # Para usar sleep
 
 # Función para convertir a números romanos (hasta 3999)
