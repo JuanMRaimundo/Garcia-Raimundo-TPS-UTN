@@ -1,14 +1,30 @@
 # Tabla de verdad del sumador de 1 bit
 print("=== Tabla de verdad del sumador de 1 bit ===")
-print(" A | B | Suma | Carry")
-print("---+---+------+------")
-# Recorre todas las combinaciones posibles de A y B (0 y 1)
+print(" A | B | Suma | Carry | Resta | Borrow | Mult | DivQ | DivR")
+print("---+---+------+------+-------+--------+------+------+------")
+
 for A in [0, 1]:
     for B in [0, 1]:
-        suma  = A ^ B   # XOR para el bit de suma
-        carry = A & B   # AND para el acarreo
-        #imprime la fila correspondiente en la tabla
-        print(f" {A} | {B} |  {suma}   |   {carry}")
+        # Suma (half-adder)
+        suma   = A ^ B
+        carry  = A & B
+
+        # Resta (half-subtractor)
+        resta  = A ^ B
+        borrow = int((not A) and B)
+
+        # Multiplicación
+        mult = A * B
+
+        # División entera: cociente (DivQ) y resto (DivR), manejando B=0
+        if B == 0:
+            divq = "NaN"  # no definido
+            divr = "NaN"
+        else:
+            divq = A // B
+            divr = A % B
+
+        print(f" {A} | {B} |  {suma}   |   {carry}   |   {resta}   |   {borrow}    |  {mult}   |  {divq}   |  {divr}")
 #Esto valida que el numero es 0 o 1
 while True:
     #el usuario ingresa el valor de A
