@@ -3,6 +3,7 @@ import platform
 CLEAR = "cls" if platform.system() == "Windows" else "clear"
 os.system(CLEAR)
 print("1- Simulador de Puertas Lógicas\n2- Conversor de Números\n3- Cuenta del 0 al 15 en diferentes sistemas numéricos")
+print("4- Tabla de verdad interactiva\n5-Tabla de verdad de la suma, resta, division y multiplicacion de 1 bit ")
 decision=int(input("Que actividad deseas ver: "))
 CLEAR = "cls" if platform.system() == "Windows" else "clear"
 os.system(CLEAR)
@@ -113,7 +114,132 @@ elif decision==3:
         print(f"{numero:2} -> {binario}  {leds} | Oct: {octal:>2} | Hex: {hexadecimal:>2} | Rom: {romano}")
         # se produce un retardo de 0.5 segundos para simular el conteo
         time.sleep(0.5)
-elif desicion==4:
+elif decision==4:
+    # Programa: Tabla de verdad interactiva
+    from colorama import Fore, Style, init
+    from tabulate import tabulate
 
+    # Inicializar colorama
+    init(autoreset=True)
+    # Lista de operaciones disponibles
+    operaciones = {
+        "AND": lambda a, b: a and b,
+        "OR": lambda a, b: a or b,
+        "XOR": lambda a, b: a ^ b,
+        "NAND": lambda a, b: not (a and b),
+        "NOR": lambda a, b: not (a or b),
+        "XNOR": lambda a, b: not (a ^ b),
+        "NOT A": lambda a, b: not a,
+        "NOT B": lambda a, b: not b
+    }#Cada valor es una función lambda que recibe A y B y devuelve el resultado lógico.
+    # Muestra las opciones en color amarillo y el titulo en cyan
+    print(Fore.CYAN + "Operaciones disponibles:")
+    for op in operaciones:
+        print(Fore.YELLOW + f"- {op}")
+
+    #Solicitar operación al usuario em color cyan 
+    #el .strip() elimina los espacios y otros caracteres como salto de linea en la respuesta
+    #el .upper() toma cualquier minuscula y lo convierte en mayuscula
+    opcion = input(Fore.CYAN + "Elige una operación lógica: ").strip().upper()
+
+    #Esto valida operación, si la opcion no esta en las operaciones imprira un mensaje en rojo
+    #sino, imprimira la tabla de verdad  
+    if opcion not in operaciones:
+        print(Fore.RED + "Operación no válida.")
+    else:
+        print(Fore.GREEN + f"\nTabla de verdad para: {opcion}\n")
+        #Construye los datos para la tabla
+        tabla = []
+        for A in [False, True]:
+            for B in [False, True]:
+                resultado = operaciones[opcion](A, B)
+                # Convertir a 0 y 1 con colores
+                val_A = Fore.RED + "0" if not A else Fore.GREEN + "1"
+                val_B = Fore.RED + "0" if not B else Fore.GREEN + "1"
+                val_R = Fore.RED + "0" if not resultado else Fore.GREEN + "1"
+                tabla.append([val_A, val_B, val_R])
+        # Muestra la tabla con formato
+        print(tabulate(tabla, headers=[Fore.CYAN + "A", Fore.CYAN + "B", Fore.CYAN + "Resultado"], tablefmt="fancy_grid"))
+elif decision==5:
+    # --- Bloque de tabla ---
+    print("=== Tabla de verdad de la suma, resta, division y multiplicacion de 1 bit ===")
+    print(" A | B | Suma | Carry | Resta | Borrow | Mult | DivQ | DivR")
+    print("---+---+------+------+-------+--------+------+------+------")
+    # Recorre todas las combinaciones posibles de A y B (0 y 1)
+    for A in [0, 1]:
+        for B in [0, 1]:
+            suma   = A ^ B
+            carry  = A & B
+            resta  = A ^ B
+            borrow = int((not A) and B)
+            mult   = A * B
+            if B == 0:
+                divq = "NaN"
+                divr = "NaN"
+            else:
+                divq = A // B
+                divr = A % B
+            print(f" {A} | {B} |  {suma}   |   {carry}   |   {resta}   |   {borrow}    |  {mult}   |  {divq}   |  {divr}")
+    print("\n=== Modo interactivo ===")
+    print("Ingresa solo 0 o 1 para A y B.")
+    while True:
+        #el usuario ingresa el valor de A
+        A_str=input("\nIngresa A (0 o 1): ").strip()
+        #si A_str no es 0 o 1 imprime mensaje de error y vuelve a pedir el numero
+        if A_str not in ("0", "1"):
+            print("  Entrada inválida. Debes ingresar 0 o 1.")
+            continue
+        #si la entreda es valida convierte A_str a entero y lo asigna a A
+        A = int(A_str)
+        #el usuario ingresa el valor de B
+        B_str = input("Ingresa B (0 o 1): ").strip()
+        #si B_str no es 0 o 1 imprime mensaje de error y vuelve a pedir el numero
+        if B_str not in ("0", "1"):
+            print("  Entrada inválida. Debes ingresar 0 o 1.")
+            continue
+        #si la entreda es valida convierte B_str a entero y lo asigna a B
+        B = int(B_str)
+        #se le presentan al usuario las opciones de operaciones que puede realizar,
+        #eliminamos espacios y convertimos mayusculas a minusculas por si acaso
+        op = input("Elige operación: suma (s), resta (r), mult (m) o div (d): ").strip().lower()
+        #si la operacion no es valida imprime mensaje de error y vuelve a pedir la operacion
+        if op not in ("s", "r", "m", "d"):
+            print("  Operación inválida. Usa 's', 'r', 'm' o 'd'.")
+            continue
+        #Calcula todas las operaciones
+        suma   = A ^ B
+        carry  = A & B
+        resta  = A ^ B
+        borrow = int((not A) and B)
+        mult   = A * B
+        #Maneja división por cero
+        if B == 0:
+            divq = "NaN"
+            divr = "NaN"
+        #si B no es 0 realiza la division
+        else:
+            divq = A // B
+            divr = A % B
+        #Muestra el resultado de la operacion seleccionada
+        #si la operacion es suma, muestra el resultado de la suma y el carry
+        if op == "s":
+            print(f"  Suma   → bit: {suma}, carry: {carry}")
+        #si la operacion es resta, muestra el resultado de la resta y el borrow
+        elif op == "r":
+            print(f"  Resta  → bit: {resta}, borrow: {borrow}")
+        #si la operacion es multiplicacion, muestra el resultado de la multiplicacion
+        elif op == "m":
+            print(f"  Mult   → resultado: {mult}")
+        #si la operacion es division, muestra el cociente y el resto
+        else:
+            if divq is None:
+                print("  División indefinida (división por cero)")
+            else:
+                print(f"  DivQ   → cociente: {divq}")
+                print(f"  DivR   → resto:     {divr}")
+        otra = input("  ¿Otra operación? (s/n): ").strip().lower()
+        if otra != "s":
+            print("  Fin del simulador.")
+            break
 else:
     print("esa no es una opcion valida")

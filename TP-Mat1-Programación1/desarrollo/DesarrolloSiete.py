@@ -1,5 +1,5 @@
 # --- Bloque de tabla ---
-print("=== Tabla de verdad del sumador de 1 bit ===")
+print("=== Tabla de verdad de la suma, resta, division y multiplicacion de 1 bit ===")
 print(" A | B | Suma | Carry | Resta | Borrow | Mult | DivQ | DivR")
 print("---+---+------+------+-------+--------+------+------+------")
 # Recorre todas las combinaciones posibles de A y B (0 y 1)
