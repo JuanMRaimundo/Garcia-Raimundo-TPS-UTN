@@ -11,12 +11,13 @@ clear_cmd = "cls" if platform.system() == "Windows" else "clear"
 while True:
     # Limpia pantalla y muestra menú
     os.system(clear_cmd)
-    opciones = {
+    opciones ={
         "1": "Simulador de Puertas Lógicas",
         "2": "Conversor de Números",
         "3": "cuenta del 0 al 15 en diferentes sistemas numéricos",
         "4": "Tabla de Verdad Interactiva",
-        "5": "Tabla de Verdad 1-bit (sum/rest/mul/div)"
+        "5": "Tabla de Verdad 1-bit (sum/rest/mul/div)",
+        "6": "Próximamente..."
     }
     menu = Table(
         title="MENÚ PRINCIPAL",
@@ -123,38 +124,32 @@ while True:
     elif eleccion == "3":
         os.system(clear_cmd)
         #Programa:Cuenta del 0 al 15 en diferentes sistemas numericos
-        import time  # Para usar sleep
-        # Función para convertir a números romanos (hasta 3999)
-        def a_romano(numero):
-            #Lista con los valores de numeros en romano
-            valores = [
-                (1000, 'M'), (900, 'CM'), (500, 'D'), (400, 'CD'),
-                (100, 'C'), (90, 'XC'), (50, 'L'), (40, 'XL'),
-                (10, 'X'), (9, 'IX'), (5, 'V'), (4, 'IV'), (1, 'I')
-            ]
-            #variable para la conversion de numero a simbolo romano
-            resultado = ""
-            n = numero
-            for valor, simbolo in valores:
-                #Mientras que n sea igual o mayor que valor a el resultado se le suma un sinbolo y a n se le resta el valor
-                while n >= valor:
-                    resultado += simbolo
-                    n -= valor
-            #el cero no cambia por que no existe el cero en los numeros romanos
-            return resultado if resultado else "0"  # Para el caso de 0
-        # Cuenta del 0 al 15
+        import time
+        # Lista con los valores y símbolos del sistema romano
+        valores_romanos = [
+            (1000, 'M'), (900, 'CM'), (500, 'D'), (400, 'CD'),
+            (100, 'C'), (90, 'XC'), (50, 'L'), (40, 'XL'),
+            (10, 'X'), (9, 'IX'), (5, 'V'), (4, 'IV'), (1, 'I')
+        ]
         for numero in range(16):
-            # Representaciones en distintos sistemas
-            binario = format(numero, '04b')   # Binario con 4 bits
-            octal = format(numero, 'o')       # Octal
-            hexadecimal = format(numero, 'X') # Hexadecimal en mayúsculas
-            romano = a_romano(numero)              # Romano
-            #Esto crea la ilusion de led encendidos y apagados, esto muestran de manera visual los encendidos y apagados del codigo 
-            #🔴 para 1 y  ⚫ para 0
+            # Representaciones en otros sistemas
+            binario     = format(numero, '04b')
+            octal       = format(numero, 'o')
+            hexadecimal = format(numero, 'X')
+            # Conversión a romano 
+            n = numero
+            resultado_romano = ""
+            for valor, simbolo in valores_romanos:
+                while n >= valor:
+                    resultado_romano += simbolo
+                    n -= valor
+            if resultado_romano == "":
+                resultado_romano = "0"  # No existe cero en números romanos
+            # Simulación de LEDs: 🔴 para 1 y ⚫ para 0
             leds = ''.join('🔴' if bit == '1' else '⚫' for bit in binario)
-            #Muestra número y su representación binaria, octal, hexadecimal y romano con sus leds encendidos y apagados
-            print(f"{numero:2} -> {binario}  {leds} | Oct: {octal:>2} | Hex: {hexadecimal:>2} | Rom: {romano}")
-            # se produce un retardo de 0.5 segundos para simular el conteo
+            # Salida formateada
+            print(f"{numero:2} -> {binario}  {leds} | Oct: {octal:>2} | Hex: {hexadecimal:>2} | Rom: {resultado_romano}")
+            # Retardo para simular conteo
             time.sleep(0.5)
         console.input("\n[cyan]Presiona Enter para volver al menú…[/cyan]")
 
@@ -291,6 +286,10 @@ while True:
             if otra != "s":
                 print("  Fin del simulador.")
                 break
+        console.input("\n[cyan]Presiona Enter para volver al menú…[/cyan]")
+    elif eleccion == "6":
+        os.system(clear_cmd)
+        print("Esta opción estará disponible próximamente. ¡Gracias por tu paciencia!")
         console.input("\n[cyan]Presiona Enter para volver al menú…[/cyan]")
     else:
         console.print("[red]Esa no es una opción válida.[/]\n")
