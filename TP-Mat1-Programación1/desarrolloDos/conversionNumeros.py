@@ -23,7 +23,7 @@ while True:
                 # Creamos la variable temp para poder hacer la conversión, sin perder el valor ingresado por el usuario
         temp = numero_usuario       
 
-              #Dividimos secuencialmente por 2 hasta que no haya número para dividir.
+            #Dividimos secuencialmente por 2 hasta que no haya número para dividir.
         while temp>0:  
             resto=temp%2
             resultado_binario = str(resto) + resultado_binario
@@ -35,7 +35,7 @@ while True:
         numero_usuario= input("Ingrese un número binario con 0s y 1s: ")
 
         es_binario=True
-                                 #En este IF validamos si el usuario no ingresó nada, o ingresó un número no binario
+        #En este IF validamos si el usuario no ingresó nada, o ingresó un número no binario
         if numero_usuario == "":
             es_binario = False
         else:
@@ -48,7 +48,6 @@ while True:
         if not es_binario:
             print("Error: Debes ingresar solo 0s y 1s.")
             continue
-           
 
         resultado_decimal=0
         longitud = len(numero_usuario)
@@ -62,5 +61,3 @@ while True:
             
 
         print(f"Ingresaste el número : {numero_usuario}. Su equivalente decimal es el: {resultado_decimal}")
-
-   

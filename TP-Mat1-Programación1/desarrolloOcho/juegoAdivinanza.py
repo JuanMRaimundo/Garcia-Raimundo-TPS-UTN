@@ -17,7 +17,6 @@ while True:
         print("¡Hasta luego!")
         break
     if opcion == "1":
-       
         num_decimal = random.randint(0, 15)    # Generamos un número decimal entre 0 y 15
         
         print(f"\n¿Cuál es la representación binaria del número decimal: {num_decimal}?")
@@ -39,7 +38,6 @@ while True:
         if not respuesta_valida:
             print("Error: Debes ingresar solo 0s y 1s.")
             continue
-       
         respuesta_decimal = 0
         longitud = len(respuesta)   
                                     # Convertimos la respuesta del usuario a decimal para comparar con el decimal random
@@ -47,8 +45,7 @@ while True:
             digito = int(respuesta[i])
             potencia = longitud - 1 - i
             respuesta_decimal += digito * (2 ** potencia)
-        
-      
+    
         temp = num_decimal
         binario_correcto = ""
         
@@ -69,7 +66,7 @@ while True:
         
         decimal_correcto = random.randint(0, 15) #Número decimal random entre 0 y 15
         
-                             # Convertimos el decimal random a binario 
+        # Convertimos el decimal random a binario 
         temp = decimal_correcto
         binario_str = ""
         
