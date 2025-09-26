@@ -50,7 +50,13 @@ while True:
             print("1. AND    2. OR    3. NOT")
             print("4. SALIR") 
             opcion = input("Seleccione una opción (1-4): ")
-            #Salimos del while y se corta el programa
+            #Este while nos permitirá validar continuamente las opciones ingresadas dentro de este menú
+            while opcion not in ["1", "2", "3", "4"]:
+                print("Opción incorrecta! Por favor, ingrese 1, 2, 3 o 4.")
+                print("\nOpciones disponibles:")
+                print("1. AND    2. OR    3. NOT")
+                print("4. SALIR") 
+                opcion = input("Seleccione una opción (1-4): ")
             if opcion == "4":
                 print("Nos vemos pronto, hasta luego!")
                 break
