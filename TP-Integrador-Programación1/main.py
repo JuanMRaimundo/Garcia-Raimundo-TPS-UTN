@@ -1,4 +1,5 @@
 from Funciones.agregarPais import agregarPais
+from Funciones.guardarArchivo import guardar_archivo
 from Funciones.leerArchivo import leerArchivo
 #Desarrollo de Menu con Python
 import os
@@ -16,8 +17,9 @@ print("Bienvenido al Menu de Opciones")
 input("Presione Enter para continuar...")
 # Limpia la consola nuevamente
 os.system(clear)
+lista_paises=leerArchivo()
+
 while True:
-    lista_paises=leerArchivo()
     # Muestra el menu de opciones
     print("Menu de Opciones")
     print("1. Agregar países")
@@ -34,6 +36,7 @@ while True:
         # si la opcion es "1"
         case "1":
             agregarPais(lista_paises)
+            guardar_archivo(lista_paises)
         case "2":
             # Imprime un mensaje indicando que se ha seleccionado la opción de buscar un país
             print("haz seleccionado buscar un país")
