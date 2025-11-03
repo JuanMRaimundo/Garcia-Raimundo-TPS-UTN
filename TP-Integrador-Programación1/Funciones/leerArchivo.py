@@ -37,12 +37,12 @@ def leerArchivo(ruta_csv: Path | str = DEFAULT_CSV):
             else:
                 # si viene vacío o no es numérico, asignar 0.0
                 superficie = 0.0
-
+            # Agregar país a la lista
             lista_paises.append({
                 "nombre": nombre,
                 "poblacion": poblacion,
                 "superficie": superficie,
                 "continente": continente
             })
-
+    # Devolver la lista de países
     return lista_paises
