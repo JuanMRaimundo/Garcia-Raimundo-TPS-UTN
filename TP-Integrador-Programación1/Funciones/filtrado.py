@@ -147,21 +147,4 @@ def menu_filtrar_interactivo(paises):
     else:
         print("Operación cancelada o opción inválida.")
 
-# Pequeño menú principal para probar
-def main():
-    while True:
-        print("\n--- Menú Principal ---")
-        print("1. Filtrar países")
-        print("2. Listar todos los países")
-        print("3. Salir")
-        opc = input("Seleccione (1-3): ").strip()
-        if opc == "1":
-            menu_filtrar_interactivo(PAISES)
-        elif opc == "2":
-            mostrar_lista(PAISES)
-        elif opc == "3":
-            print("Saliendo...")
-            sys.exit(0)
-        else:
-            print("Opción inválida. Intente nuevamente.")
 
