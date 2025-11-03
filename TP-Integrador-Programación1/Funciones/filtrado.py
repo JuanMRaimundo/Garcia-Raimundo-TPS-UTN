@@ -1,31 +1,46 @@
 # menu_filtrado_con_datos.py
 import sys
 
-# Utilidades de validación y conversión
+#función para validar si un string es un entero
 def es_entero(s):
+    #variable para limpiar espacios
     s = s.strip()
+    #si el string está vacío
     if s == "":
+        #devolver False
         return False
     # admitir negativos si fuera necesario
     if s.lstrip("-").isdigit():
+        #devolver True
         return True
+    #devolver False
     return False
 
+#función para convertir string a int o None
 def convertir_int_opcional(s):
+    #variable para limpiar espacios
     s = s.strip()
+    #si el string está vacío
     if s == "":
+        #devolver None
         return None
+    #devolver el entero o None si no es válido
     return int(s) if s.lstrip("-").isdigit() else None
 
+# funcion para mostrar una lista de países
 def mostrar_lista(paises):
+    #si la lista está vacía
     if not paises:
         print("No se encontraron países.")
         return
+    #para cada país en la lista 
     for p in paises:
+        #extraer datos
         nombre = p["nombre"]
         cont = p["continente"].title()
         pobl = f"{p['poblacion']:,}"
         sup = f"{p['superficie']:,}"
+        #imprimir datos formateados
         print(f"- {nombre} | Continente: {cont} | Población: {pobl} | Superficie km²: {sup}")
 
 # Función de filtrado reutilizable
@@ -37,29 +52,49 @@ def filtrar_paises(paises, criterio, valor=None, min_val=None, max_val=None):
     #- criterio == "superficie": usar min_val y/o max_val (enteros o None)
     #Devuelve la lista filtrada (posible lista vacía).
     #"""
+    # variable para almacenar los resultados
     resultado = []
+    #variable para normalizar el criterio
     criterio_norm = criterio.strip().lower()
-
+    #si el criterio es continente
     if criterio_norm == "continente":
+        #si el valor es None
         if valor is None:
+            #devolver lista vacía
             return []
+        #variable para limpiar y normalizar el valor
         v = valor.strip().lower()
+        #para cada país en la lista
         for p in paises:
+            #si el continente del país coincide con el valor
             if p.get("continente", "").lower() == v:
+                #añadir país a resultados
                 resultado.append(p)
+        #devolver resultados
         return resultado
-
+    #si el criterio es población o superficie
     if criterio_norm in ("poblacion", "superficie"):
+        #variable para determinar si es población o superficie
         campo = "poblacion" if criterio_norm == "poblacion" else "superficie"
+        #para cada país en la lista
         for p in paises:
+            # obtener el valor del campo
             val = p.get(campo)
+            #si el valor es None, o no cumple los límites
             if val is None:
+                #continua
                 continue
+            #si min_val está definido y el valor es menor que min_val
             if (min_val is not None) and (val < min_val):
+                #continuar
                 continue
+            #si max_val está definido y el valor es mayor que max_val
             if (max_val is not None) and (val > max_val):
+                #continuar
                 continue
+            #añadir país a resultados
             resultado.append(p)
+        #devolver resultados
         return resultado
 
     # criterio no reconocido -> devolver vacío
