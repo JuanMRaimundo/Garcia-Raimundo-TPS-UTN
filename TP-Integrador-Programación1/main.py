@@ -1,6 +1,7 @@
 from Funciones.agregarPais import agregarPais
 from Funciones.guardarArchivo import guardar_archivo
 from Funciones.leerArchivo import leerArchivo
+import Funciones.filtrado as filtrado
 #Desarrollo de Menu con Python
 import os
 import platform
@@ -29,7 +30,7 @@ while True:
     print("5. Mostrar estadísticas")
     print("6. Salir")
     # Solicita al usuario que seleccione una opcion
-    opcion =input("Seleccione una opcion (1-5): ")
+    opcion =input("Seleccione una opcion (1-6): ")
     # Procesa la opcion seleccionada usando match-case
     os.system(clear)
     match opcion:
@@ -64,37 +65,7 @@ while True:
                     print("Opcion invalida. Por favor seleccione una opcion valida.")
         # si la opcion es "2"
         case "3":
-            # Imprime un mensaje indicando que se ha seleccionado la opción de filtrar países
-            print("haz seleccionado filtrar países")
-            # Solicita al usuario que elija el criterio de filtrado
-            print("¿Cómo desea filtrar los países?")
-            # Muestra las opciones de filtrado
-            print("1. Continente\n2. Rango de Población\n3. Rango de Superficie")
-            # Solicita al usuario que seleccione una opcion de filtrado
-            filtro_opcion = input("Seleccione una opcion (1-3): ")
-            # Procesa la opcion de filtrado seleccionada
-            match filtro_opcion:
-                case "1":
-                    # Solicita al usuario que ingrese el continente para filtrar
-                    continente = input("Ingrese el continente (por ejemplo, 'Europa'): ").lower()
-                    # Imprime un mensaje indicando que se está filtrando por continente
-                    print(f"Filtrando países en el continente '{continente}'...")
-                    # Aquí iría la lógica para filtrar países por continente
-                case "2":
-                    # Solicita al usuario que ingrese el rango de población para filtrar
-                    min_poblacion = input("Ingrese la población mínima: ")
-                    max_poblacion = input("Ingrese la población máxima: ")
-                    print(f"Filtrando países con población entre {min_poblacion} y {max_poblacion}...")
-                    # Aquí iría la lógica para filtrar países por rango de población
-                case "3":
-                    # Solicita al usuario que ingrese el rango de superficie para filtrar
-                    min_superficie = input("Ingrese la superficie mínima (en km²): ")
-                    max_superficie = input("Ingrese la superficie máxima (en km²): ")
-                    # Imprime un mensaje indicando que se está filtrando por rango de superficie
-                    print(f"Filtrando países con superficie entre {min_superficie} km² y {max_superficie} km²...")
-                    # Aquí iría la lógica para filtrar países por rango de superficie
-                case _:
-                    print("Opcion invalida. Por favor seleccione una opcion valida.")
+            filtrado.menu_filtrar_interactivo(lista_paises)
         # si la opcion es "3"
         case "4":
             #imprime un mensaje de confirmación

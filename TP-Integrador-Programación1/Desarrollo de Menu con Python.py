@@ -144,8 +144,7 @@ while True:
                     # Aquí iría la lógica para contar la cantidad de países por continente
                 case _:
                     print("Opcion invalida. Por favor seleccione una opcion valida.")
-        # si la opcion es "5"
-        case "5":
+        case "8":
             # Imprime un mensaje indicando que se está saliendo del programa
             print("Saliendo del programa...")
             # Sale del bucle y termina el programa
