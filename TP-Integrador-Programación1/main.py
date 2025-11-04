@@ -1,4 +1,5 @@
 from Funciones.agregarPais import agregarPais
+from Funciones.buscarPais import buscarPais
 from Funciones.guardarArchivo import guardar_archivo
 from Funciones.leerArchivo import leerArchivo
 #Desarrollo de Menu con Python
@@ -35,34 +36,11 @@ while True:
     match opcion:
         # si la opcion es "1"
         case "1":
+            
             agregarPais(lista_paises)
             guardar_archivo(lista_paises)
         case "2":
-            # Imprime un mensaje indicando que se ha seleccionado la opción de buscar un país
-            print("haz seleccionado buscar un país")
-            # Solicita al usuario que elija entre coincidencia parcial o exacta
-            print("¿Desea buscar por coincidencia parcial o exacta?")
-            # Muestra las opciones de búsqueda
-            print("1. Coincidencia Parcial\n2. Coincidencia Exacta")
-            # Solicita al usuario que seleccione una opcion de búsqueda
-            sub_opcion = input("Seleccione una opcion (1-2): ")
-            # Procesa la opcion de búsqueda seleccionada
-            match sub_opcion:
-                case "1":
-                    # Solicita al usuario que ingrese el nombre o parte del nombre del país
-                    pais = input("Ingrese el nombre o parte del nombre del país: ").lower()
-                    # Imprime un mensaje indicando que se está buscando el país
-                    print(f"Buscando países que contengan '{pais}'...")
-                    # Aquí iría la lógica para buscar países con coincidencia parcial
-                case "2":
-                    # Solicita al usuario que ingrese el nombre exacto del país
-                    pais = input("Ingrese el nombre exacto del país: ").lower()
-                    # Imprime un mensaje indicando que se está buscando el país
-                    print(f"Buscando el país '{pais}'...")
-                    # Aquí iría la lógica para buscar países con coincidencia exacta
-                case _:
-                    print("Opcion invalida. Por favor seleccione una opcion valida.")
-        # si la opcion es "2"
+            buscarPais(lista_paises)
         case "3":
             # Imprime un mensaje indicando que se ha seleccionado la opción de filtrar países
             print("haz seleccionado filtrar países")
