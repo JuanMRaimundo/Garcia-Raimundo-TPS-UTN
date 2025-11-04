@@ -3,6 +3,7 @@ from Funciones.buscarPais import buscarPais
 from Funciones.guardarArchivo import guardar_archivo
 from Funciones.leerArchivo import leerArchivo
 import Funciones.filtrado as filtrado
+import Funciones.ordenamiento as ordenamiento
 #Desarrollo de Menu con Python
 import os
 import platform
@@ -37,40 +38,18 @@ while True:
     match opcion:
         # si la opcion es "1"
         case "1":
-            
             agregarPais(lista_paises)
             guardar_archivo(lista_paises)
+        # si la opcion es "2"
         case "2":
             buscarPais(lista_paises)
+        #si la opcion es "3"
         case "3":
             filtrado.menu_filtrar_interactivo(lista_paises)
-        # si la opcion es "3"
-        case "4":
-            #imprime un mensaje de confirmación
-            print("haz seleccionado ordenar países")
-            #• Ordenar países por: Nombre, Población, Superficie (Ascendente y Descendente).
-            print("¿Cómo desea ordenar los países?")
-            # Muestra las opciones de ordenamiento
-            print("1. Nombre\n2. Población\n3. Superficie Ascendente\n4. Superficie Descendente")
-            # Solicita al usuario que seleccione una opcion de ordenamiento
-            filtro_opcion = input("Seleccione una opcion (1-4): ")
-            # Procesa la opcion de ordenamiento seleccionada
-            match filtro_opcion:
-                case "1":
-                    print("Ordenando países por Nombre...")
-                    # Aquí iría la lógica para ordenar países por nombre
-                case "2":
-                    print("Ordenando países por Población...")
-                    # Aquí iría la lógica para ordenar países por población
-                case "3":
-                    print("Ordenando países por Superficie Ascendente...")
-                    # Aquí iría la lógica para ordenar países por superficie ascendente
-                case "4":
-                    print("Ordenando países por Superficie Descendente...")
-                    # Aquí iría la lógica para ordenar países por superficie descendente
-                case _:
-                    print("Opcion invalida. Por favor seleccione una opcion valida.")
         # si la opcion es "4"
+        case "4":
+            ordenamiento.menu_ordenar_interactivo(lista_paises)
+        # si la opcion es "5"
         case "5":
             # Imprime un mensaje indicando que se ha seleccionado la opción de mostrar estadísticas
             print("haz seleccionado mostrar estadísticas")
@@ -96,7 +75,7 @@ while True:
                     # Aquí iría la lógica para contar la cantidad de países por continente
                 case _:
                     print("Opcion invalida. Por favor seleccione una opcion valida.")
-        # si la opcion es "5"
+        # si la opcion es "6"
         case "6":
             # Imprime un mensaje indicando que se está saliendo del programa
             print("Saliendo del programa...")
