@@ -4,7 +4,7 @@ from pathlib import Path
 # Ruta del archivo actual (Funciones → ../dataBase/paises.csv)
 RUTA_CSV = Path(__file__).resolve().parent.parent / "dataBase" / "paises.csv"
 
-
+# Funcion para guardar los datos en el archivo CSV
 def guardar_archivo(lista_paises):
     #"""
     #Guarda la lista de países en el archivo CSV ubicado en ../dataBase/paises.csv.
