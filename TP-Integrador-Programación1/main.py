@@ -7,6 +7,7 @@ from Funciones.agregarPais import agregarPais
 from Funciones.buscarPais import buscarPais
 from Funciones.guardarArchivo import guardar_archivo
 from Funciones.leerArchivo import leerArchivo
+import Funciones.estadisticas as Estadisticas
 import Funciones.filtrado as filtrado
 import Funciones.ordenamiento as ordenamiento
 import Funciones.actualizarDatos as actualizarDatos
@@ -62,30 +63,7 @@ while True:
             ordenamiento.menu_ordenar_interactivo(lista_paises)
         # si la opcion es "6"
         case "6":
-            # Imprime un mensaje indicando que se ha seleccionado la opción de mostrar estadísticas
-            print("haz seleccionado mostrar estadísticas")
-            # Solicita al usuario que elija el tipo de estadística a mostrar
-            print("¿como desea ver las estadísticas?")
-            # Muestra las opciones de estadísticas
-            print("1. País con mayor y menor población\n2. Promedio de población\n3. Promedio de superficie\n4. Cantidad de países por continente")
-            # Solicita al usuario que seleccione una opcion de estadística
-            estadistica_opcion = input("Seleccione una opcion (1-4): ")
-            # Procesa la opcion de estadística seleccionada
-            match estadistica_opcion:
-                case "1":
-                    print("Mostrando país con mayor y menor población...")
-                    # Aquí iría la lógica para mostrar el país con mayor y menor población
-                case "2":
-                    print("Calculando promedio de población...")
-                    # Aquí iría la lógica para calcular el promedio de población
-                case "3":
-                    print("Calculando promedio de superficie...")
-                    # Aquí iría la lógica para calcular el promedio de superficie
-                case "4":
-                    print("Contando cantidad de países por continente...")
-                    # Aquí iría la lógica para contar la cantidad de países por continente
-                case _:
-                    print("Opcion invalida. Por favor seleccione una opcion valida.")
+            Estadisticas.estadisticas(lista_paises)
         # si la opcion es "7"
         case "7":
             # Imprime un mensaje indicando que se está saliendo del programa
