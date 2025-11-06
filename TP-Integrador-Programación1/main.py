@@ -1,10 +1,17 @@
+# main.py
+# Archivo principal que utiliza las funciones del TP Integrador de Programación 1
 
+#librerías y módulos importados
+# funciones propias
 from Funciones.agregarPais import agregarPais
 from Funciones.buscarPais import buscarPais
 from Funciones.guardarArchivo import guardar_archivo
 from Funciones.leerArchivo import leerArchivo
+import Funciones.estadisticas as Estadisticas
 import Funciones.filtrado as filtrado
-#Desarrollo de Menu con Python
+import Funciones.ordenamiento as ordenamiento
+import Funciones.actualizarDatos as actualizarDatos
+# otras librerías estándar
 import os
 import platform
 import sys
@@ -27,79 +34,39 @@ while True:
 
     print("Menu de Opciones")
     print("1. Agregar países")
-    print("2. Buscar un país")
-    print("3. Filtrar países por:")
-    print("4. ordenar países por:")
-    print("5. Mostrar estadísticas")
-    print("6. Salir")
+    print("2. Actualizar un país")
+    print("3. Buscar un país")
+    print("4. Filtrar países por:")
+    print("5. ordenar países por:")
+    print("6. Mostrar estadísticas")
+    print("7. Salir")
     # Solicita al usuario que seleccione una opcion
-    opcion =input("Seleccione una opcion (1-6): ")
+    opcion =input("Seleccione una opcion (1-7): ")
     # Procesa la opcion seleccionada usando match-case
     os.system(clear)
     match opcion:
         # si la opcion es "1"
         case "1":
-            
             agregarPais(lista_paises)
             guardar_archivo(lista_paises)
+        # si la opcion es "2"
         case "2":
-            buscarPais(lista_paises)
+            actualizarDatos.menu_actualizar_pais(lista_paises)
+            guardar_archivo(lista_paises)
+        #si la opcion es "3"
         case "3":
-            filtrado.menu_filtrar_interactivo(lista_paises)
-        # si la opcion es "3"
+            buscarPais(lista_paises)
+        #si la opcion es "4"
         case "4":
-            #imprime un mensaje de confirmación
-            print("haz seleccionado ordenar países")
-            #• Ordenar países por: Nombre, Población, Superficie (Ascendente y Descendente).
-            print("¿Cómo desea ordenar los países?")
-            # Muestra las opciones de ordenamiento
-            print("1. Nombre\n2. Población\n3. Superficie Ascendente\n4. Superficie Descendente")
-            # Solicita al usuario que seleccione una opcion de ordenamiento
-            filtro_opcion = input("Seleccione una opcion (1-4): ")
-            # Procesa la opcion de ordenamiento seleccionada
-            match filtro_opcion:
-                case "1":
-                    print("Ordenando países por Nombre...")
-                    # Aquí iría la lógica para ordenar países por nombre
-                case "2":
-                    print("Ordenando países por Población...")
-                    # Aquí iría la lógica para ordenar países por población
-                case "3":
-                    print("Ordenando países por Superficie Ascendente...")
-                    # Aquí iría la lógica para ordenar países por superficie ascendente
-                case "4":
-                    print("Ordenando países por Superficie Descendente...")
-                    # Aquí iría la lógica para ordenar países por superficie descendente
-                case _:
-                    print("Opcion invalida. Por favor seleccione una opcion valida.")
-        # si la opcion es "4"
-        case "5":
-            # Imprime un mensaje indicando que se ha seleccionado la opción de mostrar estadísticas
-            print("haz seleccionado mostrar estadísticas")
-            # Solicita al usuario que elija el tipo de estadística a mostrar
-            print("¿como desea ver las estadísticas?")
-            # Muestra las opciones de estadísticas
-            print("1. País con mayor y menor población\n2. Promedio de población\n3. Promedio de superficie\n4. Cantidad de países por continente")
-            # Solicita al usuario que seleccione una opcion de estadística
-            estadistica_opcion = input("Seleccione una opcion (1-4): ")
-            # Procesa la opcion de estadística seleccionada
-            match estadistica_opcion:
-                case "1":
-                    print("Mostrando país con mayor y menor población...")
-                    # Aquí iría la lógica para mostrar el país con mayor y menor población
-                case "2":
-                    print("Calculando promedio de población...")
-                    # Aquí iría la lógica para calcular el promedio de población
-                case "3":
-                    print("Calculando promedio de superficie...")
-                    # Aquí iría la lógica para calcular el promedio de superficie
-                case "4":
-                    print("Contando cantidad de países por continente...")
-                    # Aquí iría la lógica para contar la cantidad de países por continente
-                case _:
-                    print("Opcion invalida. Por favor seleccione una opcion valida.")
+            filtrado.menu_filtrar_interactivo(lista_paises)
         # si la opcion es "5"
+        case "5":
+            ordenamiento.menu_ordenar_interactivo(lista_paises)
+        # si la opcion es "6"
         case "6":
+            Estadisticas.estadisticas(lista_paises)
+        # si la opcion es "7"
+        case "7":
             # Imprime un mensaje indicando que se está saliendo del programa
             print("Saliendo del programa...")
             # Sale del bucle y termina el programa
