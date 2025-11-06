@@ -1,21 +1,22 @@
 nombre,poblacion,superficie,continente
-Argentina,45376763,2780400,América
-Brasil,213993437,8515767,América
-Canadá,38005238,9984670,América
-Estados Unidos,331002651,9833520,América
-México,128932753,1964375,América
-Alemania,83783942,357022,Europa
-España,46754778,505990,Europa
-Francia,65273511,643801,Europa
-Italia,60461826,301340,Europa
-Reino Unido,67886011,243610,Europa
-Rusia,145934462,17098246,Europa
-China,1439323776,9596961,Asia
-India,1380004385,3287263,Asia
-Japón,125800000,377975,Asia
-Arabia Saudita,34813871,2149690,Asia
-Egipto,102334404,1002450,África
-Nigeria,206139589,923768,África
-Sudáfrica,59308690,1221037,África
-Australia,25499884,7692024,Oceanía
-Nueva Zelanda,4822233,268838,Oceanía
+Argentina,45376763,2780400.0,América
+Brasil,213993437,8515767.0,América
+Canadá,38005238,9984670.0,América
+Estados Unidos,331002651,9833520.0,América
+México,128932753,1964375.0,América
+Alemania,83783942,357022.0,Europa
+España,46754778,505990.0,Europa
+Francia,65273511,643801.0,Europa
+Italia,60461826,301340.0,Europa
+Reino Unido,67886011,243610.0,Europa
+Rusia,145934462,17098246.0,Europa
+China,1439323776,9596961.0,Asia
+India,1380004385,3287263.0,Asia
+Japón,125800000,377975.0,Asia
+Arabia Saudita,34813871,2149690.0,Asia
+Egipto,102334404,1002450.0,África
+Nigeria,206139589,923768.0,África
+Sudáfrica,59308690,1221037.0,África
+Australia,25499884,7692024.0,Oceanía
+Nueva Zelanda,4822233,268838.0,Oceanía
+

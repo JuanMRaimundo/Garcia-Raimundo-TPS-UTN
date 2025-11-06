@@ -1,3 +1,4 @@
+
 from Funciones.agregarPais import agregarPais
 from Funciones.buscarPais import buscarPais
 from Funciones.guardarArchivo import guardar_archivo
@@ -23,6 +24,7 @@ lista_paises=leerArchivo()
 
 while True:
     # Muestra el menu de opciones
+
     print("Menu de Opciones")
     print("1. Agregar países")
     print("2. Buscar un país")
