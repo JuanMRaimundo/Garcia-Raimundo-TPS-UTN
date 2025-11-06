@@ -5,6 +5,7 @@
 # funciones propias
 from Funciones.agregarPais import agregarPais
 from Funciones.buscarPais import buscarPais
+from Funciones.estadisticas import estadisticas
 from Funciones.guardarArchivo import guardar_archivo
 from Funciones.leerArchivo import leerArchivo
 import Funciones.estadisticas as Estadisticas
@@ -31,6 +32,7 @@ lista_paises=leerArchivo()
 
 while True:
     # Muestra el menu de opciones
+
     print("Menu de Opciones")
     print("1. Agregar países")
     print("2. Actualizar un país")
