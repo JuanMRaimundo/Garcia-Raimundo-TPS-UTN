@@ -1,10 +1,7 @@
 # Para que no ingrese un texto vacío. 
-
-
 def pedir_texto(mensaje):
     while True:
         texto = input(mensaje).strip().capitalize()
-   
         if not texto:
             print("Error: El texto no puede estar vacío")
             continue
@@ -37,3 +34,5 @@ def pedir_numero(mensaje, minimo=None, maximo=None):
             continue
         
         return numero
+    
+
