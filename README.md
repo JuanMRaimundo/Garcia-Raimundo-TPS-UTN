@@ -44,38 +44,28 @@ validaciones robustas y manejo de archivos, cumpliendo los requerimientos del Tr
     <ul style="margin-top:0; padding-left:1.25rem;">
       <li>Funciones(directorio) - directorio donde estan localizadas las funciones principales de main.py</li>
           <ul style="margin-top:0; padding-left:1.25rem;">
-              <li>actualizarDatos.py</li>
-              <li>agregarPais.py</li>
-              <li>buscarPais.py</li>
-              <li>estadisticas.py</li>
-              <li>filtrado.py</li>
-              <li>guardarArchivo.py</li>
-              <li>leerArchivo.py</li>
-              <li>ordenamiento.py</li>
+              <li>actualizarDatos.py - archivo py con la funciones necesarias para ejecutar la tarea de actualizar datos de los paises</li>
+              <li>agregarPais.py - archivo py con la funciones necesarias para ejecutar la tarea de Agregar Paises</li>
+              <li>buscarPais.py - archivo py con la funciones necesarias para ejecutar la tarea de Buscar Paises</li>
+              <li>estadisticas.py - archivo py con la funciones necesarias para ejecutar la tarea de ver estadisticas de Paises</li>
+              <li>filtrado.py - archivo py con la funciones necesarias para ejecutar la tarea de Filtrar paises segun ciertos datos como Continentes</li>
+              <li>guardarArchivo.py - archivo py con la funciones necesarias para Guardar los datos ingresados en el csv</li>
+              <li>leerArchivo.py - archivo py con la funciones necesarias para leer el archivo csv</li>
+              <li>ordenamiento.py - archivo py con la funciones necesarias para Ordenar paises segun ciertos datos como por superficie o población</li>
            </ul><br>
       <li>Validaciones(directorio) directorio donde esta localizada una de las validaciones </li>
-      <li>dataBase(directorio)</li>
+         <ul style="margin-top:0; padding-left:1.25rem;">
+              <li>Validaciones py — Codigo donde se encuentran algunas validaciones como pedir_texto o pedir_numero</li>
+         </ul><br>
+      <li>dataBase(directorio) - directorio donde esta colocado el Dataset</li>
+        <ul style="margin-top:0; padding-left:1.25rem;">
+              <li>Paises.csv — Dataset base con formato: nombre,poblacion,superficie,continente</li>
+           </ul><br>
       <li>gitignore</li>
-      <li>main.py</li>
+      <li>main.py — Interfaz de menú y flujo principal de ejecución.</li>
     </ul><br>
   <li>TP-Mat1-Programación1 - Carpeta del trabajo Integrador de Matematicas</li>
   <li>README.md — Descripción del proyecto, instrucciones de uso, ejemplos y créditos.</li>
 </ol>
-Paises.csv — Dataset base con formato: nombre,poblacion,superficie,continente.
 
-main.py — Interfaz de menú y flujo principal de ejecución.
-
-io_utils.py — Funciones de lectura/escritura del CSV y validaciones.
-
-models.py — Creación y normalización de registros de país.
-
-filters.py — Búsquedas, filtros y ordenamientos.
-
-stats.py — Cálculos estadísticos y reportes.
-
-tests/ — Scripts o casos de prueba y ejemplos de ejecución.
-
-docs/ — Informe teórico, diagrama de flujo y capturas de pantalla.
-
-video/ — Archivo del video tutorial y guion.
 
