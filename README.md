@@ -68,4 +68,15 @@ validaciones robustas y manejo de archivos, cumpliendo los requerimientos del Tr
   <li>README.md — Descripción del proyecto, instrucciones de uso, ejemplos y créditos.</li>
 </ol>
 
-
+<h1 align="left">Instrucciones de ejecución</h1>
+<p>primero el usuario ejecutara el archivo main.py del directorio TP-Integrador-Programación1, luego le saldran 7 opciones estas son</p>
+<ol style="margin-top:0; padding-left:1.25rem;">
+  <li> Agregar países - Agregar un país con todos los datos necesarios para almacenarse en el csv </li>
+  <li> Actualizar un pais - Actualiza los datos de Población y Superfice de un Pais</li>
+  <li> Buscar un país - Busca un país por nombre (coincidencia parcial o exacta).</li>
+  <li> Filtrar países por: - Filtra países por continente, Rango de población y Rango de superficie </li>
+  <li> Ordenar países por: - Ordena países por nombre ,Población o Superficie (ascendente o descendente) </li>
+  <li> Mostrar estadísticas - Muestra estadisticas de Países con mayor y menor población, Promedio de población, Promedio de superficie o Cantidad de países por continente</li>
+  <li>salir</li>
+</ol>
+<p>el usuario tendra que usar las teclas del 1 al 7 para poder seleccionar una opción, de otro modo marcara error<br> para salir del programa el usuario tendra apretar el boton 7 en el teclado, de otro modo el programa no se cerrara</p>
