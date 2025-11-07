@@ -1,6 +1,6 @@
 <h1 align="center">Descripción del proyecto</h1>
-<p>Gestor de Países — aplicación de consola en Python para cargar, consultar, filtrar, ordenar y obtener estadísticas sobre un <br>
-conjunto de países leído desde un CSV. El objetivo es demostrar buen diseño con listas y diccionarios, funciones moduladas, <br>
+<p>Gestor de Países — aplicación de consola en Python para cargar, consultar, filtrar, ordenar y obtener estadísticas sobre un 
+conjunto de países leído desde un CSV. El objetivo es demostrar buen diseño con listas y diccionarios, funciones moduladas,
 validaciones robustas y manejo de archivos, cumpliendo los requerimientos del Trabajo Práctico Integrador de Programación 1.</p>
 
 <h1 align="center">Datos de la Universidad y la cátedra</h1>
