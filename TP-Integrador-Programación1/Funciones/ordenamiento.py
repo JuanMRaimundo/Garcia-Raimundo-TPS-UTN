@@ -220,4 +220,3 @@ def menu_ordenar_interactivo(paises_raw: List[Dict]) -> None:
             case _:
                 print("Opción inválida. Intente nuevamente.")
                     
-# Ejecución de prueba 
