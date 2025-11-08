@@ -108,7 +108,7 @@ def menu_filtrar_interactivo(paises):
     print("2. Por Rango de Población")
     print("3. Por Rango de Superficie")
     opcion = input("Seleccione una opción (1-3, Enter para cancelar): ").strip()
-
+    
     if opcion == "1":
         continente = input("Considere poner acentos y mayusculas correctamente\nIngrese el continente (ej. Europa, América, Asia, África, Oceanía):").strip()
         if continente == "":
