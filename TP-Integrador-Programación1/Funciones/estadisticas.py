@@ -1,13 +1,13 @@
 def estadisticas(lista_paises):
     while True:
-        print("\n=== ESTADÍSTICAS ===")
+        print("\n=== ESTADÍSTICAS ===\n")
         print("1. País con mayor y menor población")
         print("2. Promedio de población")
         print("3. Promedio de superficie")
         print("4. Cantidad de países por continente")
-        print("5. Volver al menú principal")
+        print("5. Volver al menú principal\n")
         
-        opcion = input("Seleccione una opción (1-5): ")
+        opcion = input("\nSeleccione una opción (1-5): ")
         
         match opcion:
             case "1":
