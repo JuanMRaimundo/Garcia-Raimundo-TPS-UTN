@@ -5,7 +5,6 @@
 # funciones propias
 from Funciones.agregarPais import agregarPais
 from Funciones.buscarPais import buscarPais
-from Funciones.estadisticas import estadisticas
 from Funciones.guardarArchivo import guardar_archivo
 from Funciones.leerArchivo import leerArchivo
 import Funciones.estadisticas as Estadisticas
@@ -33,16 +32,16 @@ lista_paises=leerArchivo()
 while True:
     # Muestra el menu de opciones
 
-    print("Menu de Opciones")
+    print("\nMenu de Opciones\n")
     print("1. Agregar países")
     print("2. Actualizar un país")
     print("3. Buscar un país")
     print("4. Filtrar países por:")
-    print("5. ordenar países por:")
+    print("5. Ordenar países por:")
     print("6. Mostrar estadísticas")
-    print("7. Salir")
+    print("7. Salir\n")
     # Solicita al usuario que seleccione una opcion
-    opcion =input("Seleccione una opcion (1-7): ")
+    opcion =input("\nSeleccione una opcion (1-7): ")
     # Procesa la opcion seleccionada usando match-case
     os.system(clear)
     match opcion:
