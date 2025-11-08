@@ -5,6 +5,7 @@
 # funciones propias
 from Funciones.agregarPais import agregarPais
 from Funciones.buscarPais import buscarPais
+from Funciones.estadisticas import estadisticas
 from Funciones.guardarArchivo import guardar_archivo
 from Funciones.leerArchivo import leerArchivo
 import Funciones.estadisticas as Estadisticas
