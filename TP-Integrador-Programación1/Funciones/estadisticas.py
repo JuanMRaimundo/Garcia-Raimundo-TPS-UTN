@@ -97,9 +97,9 @@ def paises_por_continente(lista_paises):
         if continente == "África":
             africa.append(pais)   
 
-    print(f"\n En la lista hay {len(america)} países de America. ")          
+    print(f"\n En la lista hay {len(america)} países de América. ")          
     print(f"\n En la lista hay {len(oceania)} países de Oceanía. ")          
     print(f"\n En la lista hay {len(europa)} países de Europa. ")          
     print(f"\n En la lista hay {len(asia)} países de Asia. ")          
-    print(f"\n En la lista hay {len(africa)} países de Aáfrica. ")          
+    print(f"\n En la lista hay {len(africa)} países de África. ")          
 
