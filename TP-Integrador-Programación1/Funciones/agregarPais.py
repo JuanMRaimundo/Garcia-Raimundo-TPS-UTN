@@ -25,13 +25,12 @@ def agregarPais(lista_paises):
                     break
             else:
                 break    
-        ## Si no existe, lo agrega    
-     
+        ## Si no existe, lo agrega        
         print(f"Datos para '{nombre}':")    
         ## Inputs con Validaciones 
         poblacion=pedir_numero("\n Ingrese la población: ",0)
         superficie=pedir_numero("\n ingrese la superficie: ",0)
-        continente=pedir_texto("\n Ingrese el continente: ").capitalize()                            
+        continente=pedir_texto("\n Ingrese el continente(Recuerde ingresar acentos si es necesario): ").capitalize()                            
         lista_paises.append({"nombre":nombre,
                             "poblacion":poblacion,
                             "superficie":superficie,
