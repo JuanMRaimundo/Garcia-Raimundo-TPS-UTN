@@ -80,3 +80,49 @@ validaciones robustas y manejo de archivos, cumpliendo los requerimientos del Tr
   <li>salir</li>
 </ol>
 <p>el usuario tendra que usar las teclas del 1 al 7 para poder seleccionar una opción, de otro modo marcara error<br> para salir del programa el usuario tendra apretar el boton 7 en el teclado, de otro modo el programa no se cerrara</p>
+
+<h1 align="left">Ejemplo de entrada y salida</h1>
+<h3>opcion 1:Agregar países</h3>
+<p>Entrada:</p>
+<img width="839" height="477" alt="image" src="https://github.com/user-attachments/assets/f2c23045-f3fd-4cae-af40-e4184028f3e7" />
+<p>Salida:</p>
+<img width="216" height="43" alt="image" src="https://github.com/user-attachments/assets/38272625-cd60-4296-891f-c0ecf395e4a1" /><br><br>
+
+
+<h3>opcion 2:Actualizar Pais</h3>
+<p>Entrada:</p>
+<img width="844" height="108" alt="image" src="https://github.com/user-attachments/assets/62d72b4c-8eac-4a59-a113-d1150bd9f75e" />
+<p>Salida:</p>
+<img width="249" height="19" alt="image" src="https://github.com/user-attachments/assets/fd14dd80-55cb-4974-a31a-ac3d49654075" /><br><br>
+
+
+<h3>opcion 3:Buscar Pais</h3>
+<p>Entrada:</p>
+<img width="291" height="142" alt="image" src="https://github.com/user-attachments/assets/7b079760-5355-4dda-9dee-eea8ba9193fd" />
+<p>Salida:</p>
+<img width="287" height="396" alt="image" src="https://github.com/user-attachments/assets/6633f050-27c1-4a0a-a96b-fcda617891fe" />
+
+
+<h3>opcion 4:Filtrar países por:</h3>
+<p>Entrada:</p>
+<img width="541" height="155" alt="image" src="https://github.com/user-attachments/assets/d02d6485-4c35-4bec-b79d-9ca8721b82e3" />
+<p>Salida:</p>
+<img width="670" height="398" alt="image" src="https://github.com/user-attachments/assets/6078b209-b45f-465b-a0c2-6335689fc132" />
+
+<h3>opcion 5:Ordenar países por:</h3>
+<p>Entrada:</p>
+<img width="331" height="180" alt="image" src="https://github.com/user-attachments/assets/f0cb4061-d766-4303-9dbb-2149068fe902" />
+<p>Salida:</p>
+<img width="670" height="405" alt="image" src="https://github.com/user-attachments/assets/b1d32049-6f41-49f1-92bc-01fbc5b8dc9a" />
+
+<h3>opcion 6: Mostrar estadísticas </h3>
+<p>Entrada:</p>
+<img width="285" height="191" alt="image" src="https://github.com/user-attachments/assets/b763ae99-89e0-475f-82b0-cbc3a3755da5" />
+<p>Salida:</p>
+<img width="292" height="185" alt="image" src="https://github.com/user-attachments/assets/12edd02b-2f1d-4113-80db-e2ad32354da3" />
+
+<h3>opcion 7: Salir </h3>
+<p>Entrada:</p>
+<img width="249" height="213" alt="image" src="https://github.com/user-attachments/assets/16b79ddc-925c-4c08-b0ec-c68fd5116768" />
+<p>Salida:</p>
+<img width="300" height="44" alt="image" src="https://github.com/user-attachments/assets/9449fcdc-8ce1-48d7-b51b-86d274c0d34d" />
