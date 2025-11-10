@@ -1,4 +1,4 @@
-from typing import List, Dict, Optional
+from typing import List, Dict
 
 # funciones auxiliares para validación y conversión
 # funcion para validar enteros

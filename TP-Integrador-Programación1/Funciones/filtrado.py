@@ -1,5 +1,4 @@
 # menu_filtrado_con_datos.py
-import sys
 
 #función para validar si un string es un entero
 def es_entero(s):
