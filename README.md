@@ -81,6 +81,10 @@ validaciones robustas y manejo de archivos, cumpliendo los requerimientos del Tr
 </ol>
 <p>el usuario tendra que usar las teclas del 1 al 7 para poder seleccionar una opción, de otro modo marcara error<br> para salir del programa el usuario tendra apretar el boton 7 en el teclado, de otro modo el programa no se cerrara</p>
 
+<h1 align="left">Links a video y repositorio GitHub</h1>
+Enlace del video:
+<a href="https://drive.google.com/file/d/1QgYtHKW6ZncEk3k_KlOSx5v8a6vGoIZK/view">
+
 <h1 align="left">Ejemplo de entrada y salida</h1>
 <h3>opcion 1:Agregar países</h3>
 <p>Entrada:</p>
